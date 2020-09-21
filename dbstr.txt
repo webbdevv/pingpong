@@ -1,0 +1,1 @@
+mongodb+srv://dashGranny:<password>@cluster0.i6yc8.mongodb.net/<dbname>?retryWrites=true&w=majority

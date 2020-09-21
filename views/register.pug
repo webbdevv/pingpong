@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	br
+	br
+	.container
+		h1 Register
+		form(method='post' action='')
+			#errors
+				if errors
+					each error in errors
+						div(class='alert alert-danger' role='alert') Error! #{error.msg}
+			.form-group
+				label(for='first_name') First Name:
+				input#first_name.form-control(type='text' placeholder='Jim' name='first_name' required='true')
+			.form-group
+				label(for='last_name') Last Name:
+				input#last_name.form-control(type='text' placeholder='Halpert' name='last_name' required='true')
+			.form-group
+				label(for='email') Email:
+				input#email.form-control(type='text' placeholder='jh@gmail.com' name='email' required='true')
+			.form-group
+				label(for='password') Password:
+				input#password.form-control(type='password' name='password' required='true')
+			.form-group
+				label(for='password2') Re-enter Password:
+				input#password2.form-control(type='password' name='password2' required='true')
+			button.btn.btn-primary(type='submit') Register

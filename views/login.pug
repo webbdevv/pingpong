@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+	br
+	br
+	.pageCenter
+		.container
+			h1 Login
+			form(method='post' action='')
+				.form-group
+					label(for='email') Username (email):
+					input#email.form-control(type='text' placeholder='jh@gmail.com' name='email' required='true')
+				.form-group
+					label(for='password') Password:
+					input#password.form-control(type='password' name='password' required='true')
+				button.btn.btn-primary(type='submit') Login
+			if errors
+				ul
+					for error in errors
+						li!=error.msg

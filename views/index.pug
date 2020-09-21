@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  main(role='main')
+    section#PPAni
+      .container
+        .starter-template
+          h1.col-4.col-md-6 Ping Pong Rankings
+          p.lead.col-4
+            | Climb to the top, live at the top, stay at the top. 
+            br
+            |  &#x30D4;&#x30F3;&#x30DD;&#x30F3; forever
+    section#MainPageBk.container
+      #ThreeSections.row.justify-content-center
+        .col-md-4.mainArea
+          img.squareToCirc(src='imgs/podium.png' alt='Heading Picture Trophy')
+          br
+          h2 Rankings
+          p
+            | A brief description of how the ranking system works, how to input data from wins and losses, and how you match up against the rest.
+          a.btn.btn-secondary(href='/players' role='button') See Details
+        .col-md-4.mainArea
+          img.squareToCirc(src='imgs/avatar.png' alt='Heading Picture Player Icon')
+          br
+          h2 Players
+          p
+            | Who we are, what style we use, and a short bio. Includes win/loss history and a list of lifetime statistics.
+          br
+          a.btn.btn-secondary(href='/matches' role='button') See Players
+        .col-md-4.mainArea
+          img#TourneyImg.squareToCirc(src='imgs/history.png' alt='Heading Picture Tournament Bracket')
+          br
+          h2 Match History
+          p
+            | Check up on old matches and ranked games you missed. Find out the score breakdowns and more.
+          br
+          a.btn.btn-secondary(href='#' role='button') Tournament Homepage
+    section.RankTable
+      h2.RankTable Don&apos;t Be Last
+      p.lead Just win and don&apos;t suck 4head
+      table#TableList.table
+        thead.thead-dark
+          tr
+            th(scope='col') Rank #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Elo
+            th(scope='col') Handle
+        tbody
+          tr
+            th(scope='row') 1
+            td Scott
+            td Dorhout
+            td.rank 1000
+            td Toobah
+          tr
+            th(scope='row') 2
+            td Luke
+            td Thayer
+            td.rank 1000
+            td TheStaleBaker
+          tr
+            th(scope='row') 3
+            td Matt
+            td Blair
+            td.rank 1000
+            td NaturalSelection
+          tr
+            th(scope='row') 4
+            td Kade
+            td Wilson
+            td.rank 1000
+            td Caia
+      br
+      br
+      p.lead Need To Add A Player?
+      form#addPlayer
+        .form-row
+          .col
+            label(for='Rank') Rank
+            input#Rank.form-control(type='text' placeholder='#')
+          .col
+            label(for='fst') First
+            input#fst.form-control(type='text' placeholder='First Name')
+          .col
+            label(for='last') Last
+            input#last.form-control(type='text' placeholder='Last')
+          .col
+            label(for='rank') Elo
+            input#Elo.form-control(type='text' placeholder='Elo (1000)')
+          .col
+            label(for='Handle') Handle
+            input#Handle.form-control(type='text' placeholder='Handle')
+        br
+        br
+        button.btn.btn-primary(type='submit') Add Player
+

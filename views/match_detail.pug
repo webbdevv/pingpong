@@ -1,0 +1,62 @@
+extends layout
+
+block content
+
+  div(class="container" id="matchDetail")
+    h3 #{match.player_one.first_name}    vs   #{match.player_two.first_name}
+    hr
+    p.lead Match details are as follows: 
+    br
+    table.table
+      thead
+        tr
+          th(scope="col") Description
+          th(scope="col") Player One: #{match.player_one.first_name}
+          th(scope="col") Player Two: #{match.player_two.first_name}
+      tbody
+        tr
+          th(scope="row") Game One
+          td #{match.g1_score_one}
+          td #{match.g1_score_two}
+        tr
+          th(scope="row") Game Two
+          td #{match.g2_score_one}
+          td #{match.g2_score_two}
+        tr
+          th(scope="row") Game Three
+          td #{match.g3_score_one}
+          td #{match.g3_score_two}
+        tr
+          th(scope="row") Game Four
+          td #{match.g4_score_one}
+          td #{match.g4_score_two}
+        tr
+          th(scope="row") Game Five
+          td #{match.g5_score_one}
+          td #{match.g5_score_two}
+        tr
+          th(scope="row") Game Six
+          td #{match.g6_score_one}
+          td #{match.g6_score_two}
+        tr
+          th(scope="row") Game Seven
+          td #{match.g7_score_one}
+          td #{match.g7_score_two}
+        tr
+          th(scope="row") Elo
+          td #{match.player_one.elo}
+          td #{match.player_two.elo}
+    
+      
+    if match.score_one > match.score_two
+      p.lead #{match.player_one.first_name} wins!
+      p.lead Date: #{match.match_date_formatted}
+    else
+      p.lead #{match.player_two.first_name} wins!
+      p.lead Date: #{match.match_date_formatted}
+
+    hr
+    p
+      a(href=match.url + '/delete') Delete Match
+    p
+      a(href=match.url +'/update') Update Match

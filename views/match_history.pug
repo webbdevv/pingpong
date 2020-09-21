@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .pageCenter
+    h2.lead Match listing:
+    ul
+      each match in matches
+        a(href=match.url) #{match.match_date_formatted}
+        if match.player_one && match.player_two
+          p #{match.player_one.first_name} vs #{match.player_two.first_name} : 
+            if match.score_one > match.score_two
+              span  #{match.player_one.first_name} victory
+              br
+            else
+              span  #{match.player_two.first_name} victory
+              br
+        else 
+          p One of the two players was deleted, this history is now void
+
+      else
+        li There are no matches

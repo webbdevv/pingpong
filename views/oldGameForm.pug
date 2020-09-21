@@ -1,0 +1,74 @@
+extends layout
+
+block content
+		main#formMain.container-fluid
+				h1#formTop.font-weight-bold Add a Game Here
+				p.lead Include the scores, match format, and other information to update the rankings.
+				form#FormStyle(method='post' action='')
+						.form-row
+								.col
+										label(for='player_one') First name
+										input#player_one.form-control(type='text' placeholder='First name' name='player_one')
+								.col
+										label(for='player_oneLast') Last name
+										input#player_oneLast.form-control(type='text' placeholder='Last name' name='one_last_name')
+						.form-row
+								.col
+										label(for='player_two') First name
+										input#player_two.form-control(type='text' placeholder='Opponent first name' name='player_two')
+								.col
+										label(for='P2Ln') Last name
+										input#P2Ln.form-control(type='text' placeholder='Opponent last name' name='two_last_name')
+						.form-group
+						div
+								label(for='MatchType') Select Match Type:
+								select#MatchType.form-control(onchange='Matchtype();' name='matchType')
+										option(selected='') Choose...
+										option(value='MatchTypeSingle') Single Game
+										option(value='MatchTypeBO3') Best of Three
+										option(value='MatchTypeBO5') Best of Five
+										option(value='MatchTypeBO7') Best of Seven
+						.form-row
+								.col
+										label(for='Game1') Game One
+										input#Game1.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g1_score_one')
+										br
+										input#Game11.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g1_score_two')
+								.col
+										label(for='Game2') Game Two
+										input#Game2.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g2_score_one')
+										br
+										input#Game2_2.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g2_score_two')
+								.col
+										label(for='Game3') Game Three
+										input#Game3.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g3_score_one')
+										br
+										input#Game3_2.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g3_score_two')
+						.form-row
+								.col
+										label(for='Game4') Game Four
+										input#Game4.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g4_score_one')
+										br
+										input#Game4_2.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g4_score_two')
+								.col
+										label(for='Game5') Game Five
+										input#Game5.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g5_score_one')
+										br
+										input#Game5_2.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g5_score_two')
+								.col
+										label(for='Game6') Game Six
+										input#Game6.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g6_score_one')
+										br
+										input#Game6_2.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g6_score_two')
+								.col
+										label(for='Game7') Game Seven
+										input#Game7.form-control(type='number' placeholder='P1 Score with leading zeroes' maxlength='5' minlength='4' name='g7_score_one')
+										br
+										input#Game7_2.form-control(type='number' placeholder='P2 Score with leading zeroes' name='g7_score_two')
+						.form-check
+								input#MatchResult1(type='radio' value='P1' name='winner' checked='')
+								label(for='MatchResult1') &nbsp;Player 1 Win
+						.form-check
+								input#MatchResult2(type='radio' value='P2' name='winner')
+								label(for='MatchResult2') &nbsp;Player 2 Win
+						button.btn.btn-primary(type='submit') Submit

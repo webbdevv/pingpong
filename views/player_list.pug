@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .pageCenter
+    h1= title
+    p.lead Here is a list of all players currently in the database with a pertinent statistics
+    section.container
+      each player in player_list
+        h3 #{player.first_name}   #{player.last_name}
+        ul.list-group Stats
+          li.list-group-item Lifetime Points Scored: #{player.lifetime_points}
+          li.list-group-item Matches Won: #{player.matches_won}
+          li.list-group-item Matches Lost: #{player.matches_lost}
+          li.list-group-item Elo: #{player.elo}
+          a(href=player.url + '/delete') Delete Player
+        hr
+      else
+        p There are no players
+        hr
+      p
+        a(href="player_form") Add a Player
+      
