@@ -12,7 +12,6 @@ Sept 21, 2020
   Not implemented
   #1 Flowing rank page (currently you can look at the player list to find each rank but this is not sorted)
   #2 Admin user (Not exactly sure how to do this)
-  #3 Deploy to Heroku or some other hosting site
   
   
   
